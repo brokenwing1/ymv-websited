@@ -1,162 +1,545 @@
 <!doctype html>
 <html lang="ru">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="theme-color" content="#08080b">
-  <title>YMV Painting Lab — кузовной ремонт и покраска в Калининграде</title>
-  <meta name="description" content="YMV Painting Lab. Кузовной ремонт, покраска, полировка и восстановление автомобилей в Калининграде. Бесплатный первичный осмотр.">
-  <meta property="og:title" content="YMV Painting Lab — кузовной ремонт без компромиссов">
-  <meta property="og:description" content="Покраска, кузовной ремонт и полировка в Калининграде. Внимание к форме, цвету и каждой детали.">
-  <meta property="og:type" content="website">
-  <meta property="og:locale" content="ru_RU">
-  <meta name="twitter:card" content="summary">
-  <link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
-  <link rel="preload" as="font" href="assets/fonts/manrope-extrabold.ttf" type="font/ttf" crossorigin>
-  <link rel="preload" as="image" href="assets/porsche.webp" imagesrcset="assets/porsche-small.webp 960w, assets/porsche.webp 1920w" imagesizes="100vw">
-  <link rel="stylesheet" href="assets/vendor/maplibre-gl.css">
-  <link rel="stylesheet" href="styles/main.css">
-  <script src="scripts/config.js" defer></script>
-  <script src="scripts/main.js" defer></script>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>YMV Painting Lab</title>
+<meta name="description" content="YMV Painting Lab — автопокраска и кузовной ремонт в Калининграде. Полная и локальная покраска, удаление вмятин, бамперы, полировка, тонировка. Бесплатный осмотр.">
+<meta name="theme-color" content="#16151a">
+<meta property="og:title" content="YMV Painting Lab — покраска авто в Калининграде">
+<meta property="og:description" content="Автопокраска и кузовной ремонт. Подбор цвета по коду, покраска в камере, бесплатный осмотр.">
+<meta property="og:image" content="img/hero-car.webp">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500&family=Onest:wght@400;500;600&family=Unbounded:wght@300;400;500;600&display=swap">
+<link rel="stylesheet" href="css/styles.css">
+<script>(function(){var d=document.documentElement;d.classList.add('js');try{var t=localStorage.getItem('ymv-theme');if(t==='dark'||t==='light')d.setAttribute('data-theme',t);}catch(e){}})();</script>
 </head>
 <body>
-  <a class="skip-link" href="#main">Перейти к содержимому</a>
-  <header class="header" id="header">
-    <a class="brand" href="#" aria-label="YMV Painting Lab — на главную"><span class="brand-mark">YMV<span class="brand-dot">.</span></span><span class="brand-caption">PAINTING LAB</span></a>
-    <nav class="nav" id="navigation" aria-label="Основная навигация">
-      <a href="#services">Услуги</a><a href="#works">Работы</a><a href="#about">О нас</a><a href="#contacts">Контакты</a>
+<!--BODY-->
+<!-- Иконки -->
+<svg width="0" height="0" style="position:absolute" aria-hidden="true">
+  <symbol id="i-arrow" viewBox="0 0 24 24"><path d="M4 12h15M13 6l6 6-6 6" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></symbol>
+  <symbol id="i-arrow-ur" viewBox="0 0 24 24"><path d="M7 17 17 7M8 7h9v9" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></symbol>
+  <symbol id="i-route" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><circle cx="6" cy="18" r="2.2"/><path d="M8.2 18H15a3.5 3.5 0 0 0 0-7H9a3.5 3.5 0 0 1 0-7h7"/><path d="M18 4.2c0 2-2 3.8-2 3.8s-2-1.8-2-3.8a2 2 0 0 1 4 0z"/></g></symbol>
+  <symbol id="i-phone" viewBox="0 0 24 24"><path d="M5 4h3.5l1.6 4.2-2.2 1.4a11 11 0 0 0 6.5 6.5l1.4-2.2L20 15.5V19a1.5 1.5 0 0 1-1.6 1.5C10.6 20 4 13.4 3.5 5.6A1.5 1.5 0 0 1 5 4z" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round"/></symbol>
+  <symbol id="i-tg" viewBox="0 0 24 24"><path d="M21 4.5 2.9 11.4c-.8.3-.8 1.4 0 1.7l4.5 1.5 1.7 5.3c.2.7 1.1.9 1.6.4l2.5-2.4 4.6 3.4c.6.4 1.4.1 1.6-.6L22.3 5.8c.2-.9-.6-1.6-1.3-1.3zM9.5 14.3l8.2-6.2" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></symbol>
+  <symbol id="i-ig" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="1.6"><rect x="3.5" y="3.5" width="17" height="17" rx="5"/><circle cx="12" cy="12" r="3.9"/><circle cx="17.2" cy="6.8" r=".9" fill="currentColor" stroke="none"/></g></symbol>
+  <symbol id="i-close" viewBox="0 0 24 24"><path d="M6 6l12 12M18 6 6 18" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/></symbol>
+  <symbol id="i-prev" viewBox="0 0 24 24"><path d="M15 5l-7 7 7 7" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></symbol>
+  <symbol id="i-next" viewBox="0 0 24 24"><path d="M9 5l7 7-7 7" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></symbol>
+  <symbol id="i-zoom" viewBox="0 0 24 24"><path d="M4 9V4h5M20 9V4h-5M4 15v5h5M20 15v5h-5" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"/></symbol>
+  <symbol id="i-up" viewBox="0 0 24 24"><path d="M12 19V5M6 11l6-6 6 6" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></symbol>
+  <symbol id="i-copy" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round"><rect x="8.5" y="8.5" width="11" height="11" rx="2"/><path d="M15.5 8.5V6a1.5 1.5 0 0 0-1.5-1.5H6A1.5 1.5 0 0 0 4.5 6v8A1.5 1.5 0 0 0 6 15.5h2.5"/></g></symbol>
+  <symbol id="i-check" viewBox="0 0 24 24"><path d="M5 12.5l4.5 4.5L19 7.5" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></symbol>
+  <symbol id="i-down" viewBox="0 0 24 24"><path d="M12 5v14M6 13l6 6 6-6" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></symbol>
+  <symbol id="i-pin" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="1.6"><path d="M12 21s-7-6.2-7-11.5a7 7 0 0 1 14 0C19 14.8 12 21 12 21z"/><circle cx="12" cy="9.5" r="2.5"/></g></symbol>
+</svg>
+
+<!-- Шапка -->
+<header class="header" id="header">
+  <div class="container header__inner">
+    <a href="#home" class="logo" aria-label="YMV Painting Lab — на главную">
+      <span class="logo__mark">YMV</span>
+      <span class="logo__sub">Painting<br>Lab</span>
+    </a>
+    <nav class="nav" id="nav" aria-label="Основная навигация">
+      <a href="#home" data-nav="home">Главная</a>
+      <a href="#about" data-nav="about">О компании</a>
+      <a href="#services" data-nav="services">Услуги</a>
+      <a href="#advantages" data-nav="advantages">Преимущества</a>
+      <a href="#works" data-nav="works">Работы</a>
+      <a href="#contacts" data-nav="contacts">Контакты</a>
+      <span class="nav__indicator" aria-hidden="true"></span>
     </nav>
-    <button class="button button-small header-cta" data-book>Записаться на осмотр <span aria-hidden="true"><svg class="arrow-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M6 18 18 6M6 6h12v12"/></svg></span></button>
-    <button class="menu-toggle" aria-label="Открыть меню" aria-controls="navigation" aria-expanded="false"><span></span><span></span></button>
-  </header>
-  <main id="main">
-    <section class="hero" aria-labelledby="hero-title">
-      <div class="hero-picture"><img src="assets/porsche.webp" srcset="assets/porsche-small.webp 960w, assets/porsche.webp 1920w" sizes="100vw" width="1920" height="1280" alt="Чёрный спортивный автомобиль в направленном свете" fetchpriority="high"></div>
-      <div class="hero-shade"></div>
-      <div class="hero-content container">
-        <div class="hero-topline"><p class="eyebrow"><i></i> КУЗОВНАЯ СТУДИЯ / КАЛИНИНГРАД</p><span class="hero-index">BODY & PAINT STUDIO</span></div>
-        <h1 id="hero-title"><span class="hero-line">КУЗОВНОЙ РЕМОНТ</span><span class="hero-line accent">БЕЗ КОМПРОМИССОВ<span class="title-period">.</span></span></h1>
-        <div class="hero-copy"><p>Возвращаем форму.<br>Восстанавливаем цвет.<br>Сохраняем характер.</p><div class="hero-buttons"><button class="button" data-book>Записаться на осмотр <span aria-hidden="true"><svg class="arrow-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M6 18 18 6M6 6h12v12"/></svg></span></button><a class="text-link" href="#works">Смотреть работы <span aria-hidden="true"><svg class="arrow-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M6 18 18 6M6 6h12v12"/></svg></span></a></div></div>
-        <div class="hero-caption"><span class="crosshair" aria-hidden="true">+</span><p>ФОРМА. ЦВЕТ. ДЕТАЛИ.<br><span>Всё должно быть точно.</span></p></div>
-      </div>
-      <div class="hero-bottom container"><p>Покраска · Кузовной ремонт · Полировка</p><a href="#directions" class="scroll-link">ЛИСТАЙТЕ ВНИЗ <span aria-hidden="true"><svg class="arrow-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M12 4v16M5 13l7 7 7-7"/></svg></span></a><p>Калининград <span class="muted">/ Центральный район</span></p></div>
-    </section>
-    <section class="directions container" id="directions" aria-label="Направления работы">
-      <a href="#service-body"><span>01</span><p>Кузовной<br>ремонт</p><b aria-hidden="true"><svg class="arrow-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M6 18 18 6M6 6h12v12"/></svg></b></a>
-      <a href="#service-paint"><span>02</span><p>Покраска<br>автомобиля</p><b aria-hidden="true"><svg class="arrow-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M6 18 18 6M6 6h12v12"/></svg></b></a>
-      <a href="#service-polish"><span>03</span><p>Полировка<br>кузова</p><b aria-hidden="true"><svg class="arrow-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M6 18 18 6M6 6h12v12"/></svg></b></a>
-      <a href="#service-restore"><span>04</span><p>Восстановление<br>после ДТП</p><b aria-hidden="true"><svg class="arrow-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M6 18 18 6M6 6h12v12"/></svg></b></a>
-    </section>
-
-    <section class="section container services" id="services">
-      <div class="section-label reveal"><span>01 / ЭКСПЕРТИЗА</span><span>ОТ ДЕТАЛИ ДО ЦЕЛОГО</span></div>
-      <div class="section-heading reveal"><h2>ТОЧНОСТЬ В<br>КАЖДОЙ <span class="accent">УСЛУГЕ.</span></h2><p>От локального ремонта<br>до полного восстановления кузова.<br><span class="muted">Находим решение для вашего автомобиля.</span></p></div>
-      <div class="services-layout">
-        <div class="service-visual reveal"><img src="assets/polish.webp" width="1400" height="933" loading="lazy" alt="Мастер полирует поверхность кузова"><div class="visual-caption"><span>YMV / PAINTING LAB</span><span>ВНИМАНИЕ К ДЕТАЛЯМ</span></div><p>Идеальный результат<br>начинается с точности.</p><span class="photo-note">Иллюстративное фото</span></div>
-        <div class="service-list reveal">
-          <details id="service-paint"><summary><span class="row-number">01</span><h3>Покраска автомобиля</h3><span class="service-arrow" aria-hidden="true"><svg class="arrow-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M6 18 18 6M6 6h12v12"/></svg></span></summary><div class="service-description"><p>Локальная или полная покраска. Подбор оттенка, подготовка поверхности и финишное покрытие — с вниманием к каждому переходу.</p><button class="text-link" data-book data-service="Покраска автомобиля">Обсудить покраску <span aria-hidden="true"><svg class="arrow-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M6 18 18 6M6 6h12v12"/></svg></span></button></div></details>
-          <details id="service-body"><summary><span class="row-number">02</span><h3>Кузовной ремонт</h3><span class="service-arrow" aria-hidden="true"><svg class="arrow-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M6 18 18 6M6 6h12v12"/></svg></span></summary><div class="service-description"><p>Восстановление формы и геометрии кузовных элементов. Сначала осмотр повреждений, затем согласование объёма работ.</p><button class="text-link" data-book data-service="Кузовной ремонт">Обсудить ремонт <span aria-hidden="true"><svg class="arrow-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M6 18 18 6M6 6h12v12"/></svg></span></button></div></details>
-          <details><summary><span class="row-number">03</span><h3>Удаление вмятин</h3><span class="service-arrow" aria-hidden="true"><svg class="arrow-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M6 18 18 6M6 6h12v12"/></svg></span></summary><div class="service-description"><p>Оценим глубину повреждения, состояние покрытия и доступ к детали. Способ исправления вмятины выбираем после осмотра.</p><button class="text-link" data-book data-service="Удаление вмятин">Показать повреждение <span aria-hidden="true"><svg class="arrow-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M6 18 18 6M6 6h12v12"/></svg></span></button></div></details>
-          <details id="service-polish"><summary><span class="row-number">04</span><h3>Полировка кузова</h3><span class="service-arrow" aria-hidden="true"><svg class="arrow-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M6 18 18 6M6 6h12v12"/></svg></span></summary><div class="service-description"><p>Работа с поверхностными дефектами и следами эксплуатации. Подбираем обработку с учётом состояния лакокрасочного покрытия.</p><button class="text-link" data-book data-service="Полировка кузова">Обсудить полировку <span aria-hidden="true"><svg class="arrow-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M6 18 18 6M6 6h12v12"/></svg></span></button></div></details>
-          <details><summary><span class="row-number">05</span><h3>Замена кузовных элементов</h3><span class="service-arrow" aria-hidden="true"><svg class="arrow-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M6 18 18 6M6 6h12v12"/></svg></span></summary><div class="service-description"><p>Замена повреждённых деталей с проверкой посадки, сопряжений и зазоров. Необходимость замены определяем при осмотре.</p><button class="text-link" data-book data-service="Замена кузовных элементов">Обсудить замену <span aria-hidden="true"><svg class="arrow-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M6 18 18 6M6 6h12v12"/></svg></span></button></div></details>
-          <details id="service-restore"><summary><span class="row-number">06</span><h3>Восстановление после ДТП</h3><span class="service-arrow" aria-hidden="true"><svg class="arrow-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M6 18 18 6M6 6h12v12"/></svg></span></summary><div class="service-description"><p>От оценки кузовных повреждений до восстановления и окраски. Последовательность и объём ремонта обсуждаем индивидуально.</p><button class="text-link" data-book data-service="Восстановление после ДТП">Обсудить восстановление <span aria-hidden="true"><svg class="arrow-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M6 18 18 6M6 6h12v12"/></svg></span></button></div></details>
-          <details><summary><span class="row-number">07</span><h3>Полировка стёкол</h3><span class="service-arrow" aria-hidden="true"><svg class="arrow-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M6 18 18 6M6 6h12v12"/></svg></span></summary><div class="service-description"><p>Оценка состояния стекла и возможности обработки. Глубина царапин и тип повреждений определяют допустимый способ работы.</p><button class="text-link" data-book data-service="Полировка стёкол">Записаться на оценку <span aria-hidden="true"><svg class="arrow-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M6 18 18 6M6 6h12v12"/></svg></span></button></div></details>
-          <details><summary><span class="row-number">08</span><h3>Работа с отдельными деталями</h3><span class="service-arrow" aria-hidden="true"><svg class="arrow-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M6 18 18 6M6 6h12v12"/></svg></span></summary><div class="service-description"><p>Ремонт и окраска отдельных кузовных элементов. Условия приёма снятых деталей согласовываются заранее.</p><button class="text-link" data-book data-service="Работа с отдельными деталями">Обсудить деталь <span aria-hidden="true"><svg class="arrow-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M6 18 18 6M6 6h12v12"/></svg></span></button></div></details>
-        </div>
-      </div>
-    </section>
-
-    <section class="section works" id="works">
-      <div class="container">
-        <div class="section-label reveal"><span>02 / НАШИ РАБОТЫ</span><span>РЕЗУЛЬТАТ В ДЕТАЛЯХ</span></div>
-        <div class="section-heading reveal"><h2>МЕНЬШЕ СЛОВ.<br><span class="accent">БОЛЬШЕ ДЕЛА.</span></h2><div><p>Наши работы —<br>лучший способ познакомиться.</p><p class="demo-note">Демонстрационная галерея. Стоковые кадры,<br>не реальные работы YMV.</p></div></div>
-        <div class="gallery">
-          <button class="work work-large reveal" data-image="assets/porsche.webp" data-caption="Форма и характер" aria-label="Открыть фото: форма и характер"><div class="work-image"><img src="assets/porsche.webp" width="1920" height="1280" loading="lazy" alt="Чёрный спортивный автомобиль, вид спереди"><span class="work-open" aria-hidden="true"><svg class="arrow-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M6 18 18 6M6 6h12v12"/></svg></span><span class="work-tag">ДЕМОНСТРАЦИОННЫЙ КАДР</span></div><div class="work-caption"><h3>Форма и характер</h3><span>01 / КУЗОВ</span></div></button>
-          <button class="work work-tall reveal" data-image="assets/rear.webp" data-caption="Чистота линий" aria-label="Открыть фото: чистота линий"><div class="work-image"><img src="assets/rear.webp" width="1067" height="1600" loading="lazy" alt="Задняя часть автомобиля в свете мастерской"><span class="work-open" aria-hidden="true"><svg class="arrow-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M6 18 18 6M6 6h12v12"/></svg></span><span class="work-tag">ДЕМОНСТРАЦИОННЫЙ КАДР</span></div><div class="work-caption"><h3>Чистота линий</h3><span>02 / ДЕТАЛИ</span></div></button>
-          <button class="work work-small reveal" data-image="assets/detail.webp" data-caption="Внимание к поверхности" aria-label="Открыть фото: внимание к поверхности"><div class="work-image"><img src="assets/detail.webp" width="960" height="1196" loading="lazy" alt="Полировка окрашенной двери автомобиля"><span class="work-open" aria-hidden="true"><svg class="arrow-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M6 18 18 6M6 6h12v12"/></svg></span><span class="work-tag">ДЕМОНСТРАЦИОННЫЙ КАДР</span></div><div class="work-caption"><h3>Внимание к поверхности</h3><span>03 / ПОКРЫТИЕ</span></div></button>
-          <button class="work work-wide reveal" data-image="assets/polish.webp" data-caption="Точность каждого движения" aria-label="Открыть фото: точность каждого движения"><div class="work-image"><img src="assets/polish.webp" width="1400" height="933" loading="lazy" alt="Полировальная машинка на тёмной поверхности кузова"><span class="work-open" aria-hidden="true"><svg class="arrow-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M6 18 18 6M6 6h12v12"/></svg></span><span class="work-tag">ДЕМОНСТРАЦИОННЫЙ КАДР</span></div><div class="work-caption"><h3>Точность каждого движения</h3><span>04 / ПОЛИРОВКА</span></div></button>
-        </div>
-      </div>
-    </section>
-
-    <section class="section comparison-section container" id="comparison">
-      <div class="section-label reveal"><span>03 / ПРЕОБРАЖЕНИЕ</span><span>РАЗНИЦА ОЧЕВИДНА</span></div>
-      <div class="section-heading reveal"><h2>ДО <span class="accent slash">/</span> ПОСЛЕ</h2><p>Один автомобиль.<br>Совсем другое впечатление.</p></div>
-      <div class="comparison reveal" style="--position:50%">
-        <img class="comparison-after" src="assets/polish.webp" width="1400" height="933" loading="lazy" alt="Демонстрационное изображение после обработки">
-        <div class="comparison-before"><img src="assets/polish.webp" width="1400" height="933" loading="lazy" alt="Демонстрационное изображение до обработки"></div>
-        <span class="compare-label before-label">ДО</span><span class="compare-label after-label">ПОСЛЕ</span>
-        <div class="compare-divider" aria-hidden="true"><span>‹ <i></i> ›</span></div>
-        <input id="comparison-range" type="range" min="0" max="100" value="50" aria-label="Сравнить до и после" aria-describedby="comparison-note">
-        <span class="compare-instruction" aria-hidden="true">ПОТЯНИТЕ, ЧТОБЫ СРАВНИТЬ</span>
-      </div>
-      <p class="demo-note" id="comparison-note">Демонстрация ползунка: один кадр с разной обработкой. Реальные фотографии до и после будут добавлены отдельно.</p>
-    </section>
-
-    <section class="section about container" id="about">
-      <div class="section-label reveal"><span>04 / НАШ ПОДХОД</span><span>НИЧЕГО СЛУЧАЙНОГО</span></div>
-      <div class="about-layout">
-        <div class="about-intro reveal"><h2>ПОЧЕМУ<br><span class="accent">YMV.</span></h2><p class="about-manifesto">Мы видим больше,<br>чем повреждение.<br>Мы видим автомобиль<br>таким, каким он должен быть.</p><span class="eyebrow muted">PAINTING LAB / КАЛИНИНГРАД</span></div>
-        <div class="benefits">
-          <div class="benefit reveal"><span>01</span><div><h3>Начинаем с осмотра</h3><p>Бесплатный первичный осмотр. Обсуждаем состояние автомобиля и необходимый объём работ.</p></div><b aria-hidden="true">+</b></div>
-          <div class="benefit reveal"><span>02</span><div><h3>Восстанавливаем форму</h3><p>Кузовной ремонт с вниманием к геометрии, зазорам и сопряжению деталей.</p></div><b aria-hidden="true">+</b></div>
-          <div class="benefit reveal"><span>03</span><div><h3>Ищем точный оттенок</h3><p>Подбор цвета — часть работы над покрытием, которое выглядит цельно.</p></div><b aria-hidden="true">+</b></div>
-          <div class="benefit reveal"><span>04</span><div><h3>Доводим до финиша</h3><p>Полировка и внимание к поверхности. Детали формируют общее впечатление.</p></div><b aria-hidden="true">+</b></div>
-          <div class="benefit reveal"><span>05</span><div><h3>Смотрим на задачу целиком</h3><p>Работаем с повреждениями разной сложности — от отдельной детали до восстановления кузова.</p></div><b aria-hidden="true">+</b></div>
-        </div>
-      </div>
-    </section>
-
-    <section class="section process-section">
-      <div class="container">
-        <div class="section-label reveal"><span>05 / ПРОЦЕСС</span><span>ПОНЯТНО НА КАЖДОМ ЭТАПЕ</span></div>
-        <div class="section-heading reveal"><h2>ОТ ПЕРВОГО ВЗГЛЯДА<br>ДО <span class="accent">ПОСЛЕДНЕГО ШТРИХА.</span></h2></div>
-        <ol class="process">
-          <li class="reveal"><span class="step-number">01</span><span class="step-point"></span><h3>ОСМОТР</h3><p>Знакомимся с автомобилем<br>и вашей задачей.</p></li>
-          <li class="reveal"><span class="step-number">02</span><span class="step-point"></span><h3>ОЦЕНКА</h3><p>Согласовываем объём,<br>стоимость и сроки.</p></li>
-          <li class="reveal"><span class="step-number">03</span><span class="step-point"></span><h3>РЕМОНТ</h3><p>Восстанавливаем форму<br>и готовим поверхность.</p></li>
-          <li class="reveal"><span class="step-number">04</span><span class="step-point"></span><h3>ПОКРАСКА</h3><p>Подбираем цвет,<br>наносим покрытие.</p></li>
-          <li class="reveal"><span class="step-number">05</span><span class="step-point"></span><h3>ВЫДАЧА</h3><p>Проверяем детали.<br>Вы принимаете результат.</p></li>
-        </ol>
-        <p class="process-note">Последовательность зависит от задачи. Все работы согласовываем до начала ремонта.</p>
-      </div>
-    </section>
-
-    <section class="cta-section">
-      <img src="assets/porsche.webp" width="1920" height="1280" loading="lazy" alt="" class="cta-image">
-      <div class="container cta-content reveal"><p class="eyebrow">СЛЕДУЮЩИЙ ШАГ — ЗА ВАМИ</p><h2>НУЖЕН<br><span>РЕМОНТ?</span></h2><div class="cta-bottom"><p>Покажите автомобиль —<br>мы оценим состояние и объём работ.</p><a class="button" href="https://t.me/YMVpainting?utm_source=ig&amp;utm_medium=social&amp;utm_content=link_in_bio">Записаться на бесплатный осмотр <span aria-hidden="true"><svg class="arrow-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M6 18 18 6M6 6h12v12"/></svg></span></a></div></div>
-    </section>
-
-    <section class="section contacts container" id="contacts">
-      <div class="section-label reveal"><span>06 / НА СВЯЗИ</span><span>КАЛИНИНГРАД</span></div>
-      <div class="section-heading reveal"><h2>ПРИЕЗЖАЙТЕ<br><span class="accent">НА ОСМОТР.</span></h2><p>Хороший результат<br>начинается со знакомства.</p></div>
-      <div class="contact-grid reveal">
-        <div><span class="contact-label">СТУДИЯ</span><h3>YMV PAINTING LAB</h3><p id="business-location">Калининград, Центральный район</p><p class="muted" id="business-address">Точный адрес уточняется</p></div>
-        <div><span class="contact-label">ТЕЛЕФОН</span><a class="phone-link" id="phone-link" aria-disabled="true">+7 (___) ___-__-__</a><p class="muted" id="phone-note">Номер будет добавлен</p></div>
-        <div><span class="contact-label">НАПИШИТЕ НАМ</span><div class="socials"><a data-contact="telegram" aria-disabled="true">Telegram <span><svg class="arrow-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M6 18 18 6M6 6h12v12"/></svg></span></a><a data-contact="whatsapp" aria-disabled="true">WhatsApp <span><svg class="arrow-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M6 18 18 6M6 6h12v12"/></svg></span></a><a data-contact="instagram" aria-disabled="true">Instagram <span><svg class="arrow-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M6 18 18 6M6 6h12v12"/></svg></span></a></div><p class="muted" id="social-note">Контакты пока не указаны</p></div>
-      </div>
-      <div class="map-wrap reveal"><div id="map" role="region" aria-label="Интерактивная карта Калининграда"><div class="map-loading"><span class="brand-mark">YMV<span class="brand-dot">.</span></span><p>Калининград / Центральный район</p><button class="button button-small" id="load-map">Показать карту</button></div></div><div class="map-caption"><span><i></i> YMV PAINTING LAB</span><p id="map-note">Условная точка в районе. Точный адрес студии уточняется.</p><a id="external-map" href="https://yandex.ru/maps/?ll=20.4522%2C54.7104&amp;z=13" target="_blank" rel="noopener noreferrer">Открыть карту <svg class="arrow-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M6 18 18 6M6 6h12v12"/></svg></a></div></div>
-    </section>
-  </main>
-  <footer class="footer container">
-    <div class="footer-main"><a href="#" class="footer-brand" aria-label="YMV Painting Lab — наверх"><span class="brand-mark">YMV<span class="brand-dot">.</span></span><span>PAINTING LAB</span></a><div><p>Кузовной ремонт · Покраска · Полировка</p><span class="muted">Калининград</span></div><nav aria-label="Навигация в подвале"><a href="#services">Услуги</a><a href="#works">Работы</a><a href="#contacts">Контакты</a></nav><a href="#" class="back-top" aria-label="Вернуться наверх"><svg class="arrow-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M12 20V4M5 11l7-7 7 7"/></svg></a></div>
-    <div class="footer-bottom"><span>© 2026 YMV Painting Lab</span><span>ТОЧНОСТЬ — В КАЖДОЙ ДЕТАЛИ.</span><button class="plain-button" id="demo-info">Демонстрационная версия</button></div>
-  </footer>
-
-  <dialog class="booking-dialog" id="booking-dialog" aria-labelledby="booking-title">
-    <button class="dialog-close" data-close aria-label="Закрыть окно">×</button>
-    <div id="booking-form-view"><p class="eyebrow accent">YMV / ПЕРВЫЙ ШАГ</p><h2 id="booking-title">НАЧНЁМ<br>С ОСМОТРА<span class="accent">.</span></h2><p class="dialog-intro">Расскажите об автомобиле. Первичный осмотр — бесплатно.</p><p class="form-notice">Демо-версия: форма подготовит текст заявки. Данные не отправляются и не сохраняются на сервере.</p>
-      <form id="booking-form">
-        <div class="form-row"><label>Ваше имя<input name="name" autocomplete="given-name" placeholder="Как к вам обращаться" required maxlength="60"></label><label>Телефон<input name="phone" autocomplete="tel" inputmode="tel" type="tel" placeholder="+7 (___) ___-__-__" required minlength="10" maxlength="24" title="Укажите телефон: от 10 до 15 цифр"></label></div>
-        <label>Автомобиль<input name="car" placeholder="Марка и модель" maxlength="100" required></label>
-        <label>Что нужно сделать<select name="service"><option>Нужна консультация</option><option>Покраска автомобиля</option><option>Кузовной ремонт</option><option>Удаление вмятин</option><option>Полировка кузова</option><option>Замена кузовных элементов</option><option>Восстановление после ДТП</option><option>Полировка стёкол</option><option>Работа с отдельными деталями</option></select></label>
-        <label>Комментарий <span class="muted">/ необязательно</span><textarea name="comment" rows="2" maxlength="1000" placeholder="Кратко опишите повреждение или задачу"></textarea></label>
-        <button class="button form-submit" type="submit">Подготовить заявку <span aria-hidden="true"><svg class="arrow-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M6 18 18 6M6 6h12v12"/></svg></span></button>
-      </form>
+    <div class="header__actions">
+      <a class="header__phone" href="tel:+79000000000" data-bind="phone" data-bind-href="tel">+7 (900) 000-00-00</a>
+      <button class="theme-toggle" type="button" id="themeToggle" aria-label="Переключить тему">
+        <svg class="i-moon" viewBox="0 0 24 24" aria-hidden="true"><path d="M20 14.5A8 8 0 0 1 9.5 4a8 8 0 1 0 10.5 10.5z" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round"/></svg>
+        <svg class="i-sun" viewBox="0 0 24 24" aria-hidden="true"><g fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"><circle cx="12" cy="12" r="4"/><path d="M12 2.5v2M12 19.5v2M2.5 12h2M19.5 12h2M5.3 5.3l1.4 1.4M17.3 17.3l1.4 1.4M5.3 18.7l1.4-1.4M17.3 6.7l1.4-1.4"/></g></svg>
+      </button>
+      <button class="btn btn--primary btn--sm" type="button" data-open="contact">Записаться</button>
     </div>
-    <div id="booking-result" hidden><p class="eyebrow accent">ЗАЯВКА ПОДГОТОВЛЕНА</p><h2>ОСТАЛОСЬ<br>СВЯЗАТЬСЯ<span class="accent">.</span></h2><p class="dialog-intro">Запись ещё не оформлена. Скопируйте текст и отправьте его студии, когда её контакты будут доступны.</p><textarea readonly id="request-text" rows="8" aria-label="Текст подготовленной заявки"></textarea><div class="result-actions"><button class="button" id="copy-request">Скопировать текст</button><button class="text-link" id="edit-request">Изменить</button></div><p id="copy-status" role="status"></p><div class="result-contacts" id="result-contacts"></div></div>
-  </dialog>
-  <dialog class="lightbox" id="lightbox" aria-labelledby="lightbox-title"><button class="dialog-close" data-close aria-label="Закрыть фотографию">×</button><img id="lightbox-image" alt=""><div class="lightbox-caption"><h2 id="lightbox-title"></h2><span>Иллюстративное фото / не работа YMV</span></div></dialog>
-  <dialog class="info-dialog" id="info-dialog" aria-labelledby="info-title"><button class="dialog-close" data-close aria-label="Закрыть информацию">×</button><p class="eyebrow accent">О ДЕМОНСТРАЦИИ</p><h2 id="info-title">YMV PAINTING LAB</h2><p>Это концепция сайта. Фотографии в галерее — иллюстративные материалы Unsplash и Pexels, а не работы студии. Сравнение до/после показывает один кадр с разной обработкой.</p><p>Точный адрес, телефон и социальные сети пока не указаны. Заявки не отправляются. Карта показывает условную точку в Центральном районе Калининграда.</p><p class="muted">Фото: <a href="https://unsplash.com/photos/4rFmp7iup9g" target="_blank" rel="noopener noreferrer">Unsplash</a>, <a href="https://www.pexels.com/photo/person-polishing-the-surface-of-a-car-14615262/" target="_blank" rel="noopener noreferrer">Dextar Studio / Pexels</a>, <a href="https://www.pexels.com/photo/a-person-buffing-the-paint-of-a-vehicle-11349965/" target="_blank" rel="noopener noreferrer">Bojan Milic / Pexels</a>.</p></dialog>
+    <button class="burger" type="button" id="burger" aria-label="Открыть меню" aria-expanded="false" aria-controls="mmenu"><span></span><span></span></button>
+  </div>
+</header>
+
+<!-- Мобильное меню -->
+<div class="mmenu" id="mmenu" aria-hidden="true">
+  <nav class="mmenu__nav" aria-label="Мобильная навигация">
+    <a href="#home" data-nav="home" style="--i:0">Главная</a>
+    <a href="#about" data-nav="about" style="--i:1">О компании</a>
+    <a href="#services" data-nav="services" style="--i:2">Услуги</a>
+    <a href="#advantages" data-nav="advantages" style="--i:3">Преимущества</a>
+    <a href="#works" data-nav="works" style="--i:4">Работы</a>
+    <a href="#contacts" data-nav="contacts" style="--i:5">Контакты</a>
+  </nav>
+  <div class="mmenu__foot">
+    <a class="mmenu__phone" href="tel:+79000000000" data-bind="phone" data-bind-href="tel">+7 (900) 000-00-00</a>
+    <button class="btn btn--primary btn--lg btn--block" type="button" data-open="contact">Записаться на осмотр</button>
+    <div class="mmenu__social">
+      <a class="social" href="https://t.me/YMVpainting" target="_blank" rel="noopener" data-bind-href="telegram"><svg><use href="#i-tg"/></svg>Telegram</a>
+      <a class="social" href="https://www.instagram.com/ymv_39/" target="_blank" rel="noopener" data-bind-href="instagram"><svg><use href="#i-ig"/></svg>Instagram</a>
+    </div>
+  </div>
+</div>
+
+<main>
+<!-- ============ HERO ============ -->
+<section class="hero" id="home" data-section="home">
+  <div class="hero__bg" aria-hidden="true"><div class="hero__zoom"><img src="img/hero-car.webp" alt="" width="2000" height="1333" data-parallax="0.1" fetchpriority="high"></div></div>
+  <div class="hero__shade" aria-hidden="true"></div>
+  <div class="container hero__inner">
+    <div class="hero__content">
+      <h1 class="hero__title" data-load style="--i:1">Покраска авто, которую не отличить от <em>заводской</em></h1>
+      <p class="hero__lead" data-load style="--i:2">YMV Painting Lab — автопокраска и кузовной ремонт в Центральном районе Калининграда. Подбираем цвет по коду краски, восстанавливаем геометрию кузова и возвращаем глянец.</p>
+      <div class="hero__actions" data-load style="--i:3">
+        <button class="btn btn--primary btn--lg" type="button" data-open="contact">Записаться на осмотр <svg class="btn__arrow"><use href="#i-arrow"/></svg></button>
+        <a class="btn btn--glass btn--lg" href="#works">Смотреть работы</a>
+      </div>
+    </div>
+    <aside class="hero__side" data-load style="--i:4" aria-label="Бесплатный осмотр">
+      <div class="glass offer">
+        <span class="offer__icon"><svg><use href="#i-check"/></svg></span>
+        <span><strong>Осмотр — 0 ₽</strong><span>Замер ЛКП и смета до начала работ</span></span>
+      </div>
+    </aside>
+  </div>
+  <div class="container hero__foot" data-load style="--i:5">
+    <ul class="hero__facts"><li>Покраска в камере</li><li>Цвет по коду краски</li><li>Ход работ в Telegram</li></ul>
+    <a class="hero__scroll" href="#about"><span><svg><use href="#i-down"/></svg></span>Листайте</a>
+  </div>
+</section>
+
+<div class="ticker" aria-hidden="true"><div class="ticker__track"><div class="ticker__group"><span>Полная покраска</span><i></i><span>Покраска элементов</span><i></i><span>Кузовной ремонт</span><i></i><span>Бамперы</span><i></i><span>Удаление вмятин</span><i></i><span>Полировка</span><i></i><span>Тонировка</span><i></i><span>Проекты под ключ</span><i></i></div><div class="ticker__group"><span>Полная покраска</span><i></i><span>Покраска элементов</span><i></i><span>Кузовной ремонт</span><i></i><span>Бамперы</span><i></i><span>Удаление вмятин</span><i></i><span>Полировка</span><i></i><span>Тонировка</span><i></i><span>Проекты под ключ</span><i></i></div></div></div>
+
+<!-- ============ О КОМПАНИИ ============ -->
+<section class="section" id="about" data-section="about">
+  <div class="container">
+    <div class="about__intro">
+      <div class="about__title reveal">
+        <span class="eyebrow">О компании</span>
+        <h2 class="h2">Небольшая мастерская с подходом <em>лаборатории</em></h2>
+      </div>
+      <div class="about__text reveal" style="--d:120ms">
+        <p class="lead">YMV — это команда маляров и кузовщиков, которая доводит каждую деталь до состояния «как с завода»: от скола на капоте до полной покраски и проектов под ключ.</p>
+        <p>Мы работаем в Центральном районе Калининграда. Перед началом работ осматриваем автомобиль, замеряем толщину ЛКП и называем стоимость — бесплатно и без обязательств. Ход работ показываем в Telegram и Instagram.</p>
+      </div>
+    </div>
+
+    <div class="about__media reveal--clip reveal">
+      <img src="img/about.webp" alt="Окрасочно-сушильная камера с подготовленным к покраске автомобилем" width="1150" height="590" loading="lazy" data-parallax="0.06">
+      <span class="about__badge"><b>0 ₽</b>Осмотр и смета — бесплатно</span>
+    </div>
+
+    <div class="facts">
+      <div class="fact reveal" style="--d:0ms">
+        <span class="fact__label">Опыт</span>
+        <span class="fact__value"><span data-count="6">6</span>+<small>лет</small></span>
+        <span class="fact__desc">в покраске и кузовном ремонте</span>
+      </div>
+      <div class="fact reveal" style="--d:70ms">
+        <span class="fact__label">Работы</span>
+        <span class="fact__value"><span data-count="800">800</span>+</span>
+        <span class="fact__desc">автомобилей после ремонта и покраски</span>
+      </div>
+      <div class="fact reveal" style="--d:140ms">
+        <span class="fact__label">Качество</span>
+        <span class="fact__value"><span data-count="3">3</span><small>слоя</small></span>
+        <span class="fact__desc">грунт, база и лак — в окрасочной камере</span>
+      </div>
+      <div class="fact reveal" style="--d:210ms">
+        <span class="fact__label">Гарантия</span>
+        <span class="fact__value"><span data-count="12">12</span><small>мес.</small></span>
+        <span class="fact__desc">на покраску и кузовные работы</span>
+      </div>
+      <div class="fact reveal" style="--d:280ms">
+        <span class="fact__label">Подход</span>
+        <span class="fact__value"><span data-count="1">1</span><small>мастер</small></span>
+        <span class="fact__desc">ведёт ваш автомобиль от осмотра до выдачи</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ УСЛУГИ ============ -->
+<section class="section section--alt" id="services" data-section="services">
+  <div class="container">
+    <div class="section-head">
+      <div class="section-head__main reveal">
+        <span class="eyebrow">Услуги</span>
+        <h2 class="h2">Покраска и кузовной ремонт <em>полного цикла</em></h2>
+      </div>
+      <div class="section-head__aside reveal" style="--d:120ms">
+        <p>Цены ниже — реальные примеры из наших работ. Точную стоимость назовём после бесплатного осмотра.</p>
+        <a class="link-arrow" href="https://www.instagram.com/ymv_39/" target="_blank" rel="noopener" data-bind-href="instagram">Прайс в Instagram <svg><use href="#i-arrow-ur"/></svg></a>
+      </div>
+    </div>
+
+    <div class="services">
+      <article class="service reveal" style="--d:0ms">
+        <div class="service__icon" aria-hidden="true">
+          <svg viewBox="0 0 32 32" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><rect x="11" y="3.5" width="8" height="6" rx="1.5"/><path d="M15 9.5v2.5M6 12h15.5a2.5 2.5 0 0 1 2.5 2.5v.5a2.5 2.5 0 0 1-2.5 2.5H6zM24 15h2.5M10.5 17.5 8.5 28h4l1.8-10.5M16.5 17.5c.8 2.5-.2 4-1.5 4.6"/><path class="ac" d="M28.5 11.5l1.5-1.5M29 15h2M28.5 18.5l1.5 1.5"/></svg>
+        </div>
+        <h3 class="service__title">Полная покраска кузова</h3>
+        <p class="service__desc">Разборка, подготовка, грунт, база и лак в камере. Финишная полировка перед выдачей.</p>
+        <p class="service__price"><span>Mercedes W203</span><b>80 000 ₽</b></p>
+        <button class="service__more" type="button" data-service="full">Подробнее <svg><use href="#i-arrow"/></svg></button>
+      </article>
+
+      <article class="service reveal" style="--d:70ms">
+        <div class="service__icon" aria-hidden="true">
+          <svg viewBox="0 0 32 32" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 6h13l9 9v10a2 2 0 0 1-2 2H5a1 1 0 0 1-1-1V7a1 1 0 0 1 1-1z"/><path d="M4 15h23"/><path class="ac" d="M17 20h5"/><path class="ac" d="M9 9.5v2"/></svg>
+        </div>
+        <h3 class="service__title">Покраска отдельных элементов</h3>
+        <p class="service__desc">Капот, дверь, крыло, крышка багажника — красим элемент в тон кузова с переходом на соседние.</p>
+        <p class="service__price"><span>Стоимость</span><b>после осмотра</b></p>
+        <button class="service__more" type="button" data-service="parts">Подробнее <svg><use href="#i-arrow"/></svg></button>
+      </article>
+
+      <article class="service reveal" style="--d:140ms">
+        <div class="service__icon" aria-hidden="true">
+          <svg viewBox="0 0 32 32" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M8.5 4.5l7 7-3 3-7-7zM14 13l9 9"/><path d="M21.5 20.5l2.5-2.5 3 3-2.5 2.5"/><path class="ac" d="M4 27c4-3.5 8-3.5 12 0s8 3.5 12 0"/></svg>
+        </div>
+        <h3 class="service__title">Кузовной ремонт и вмятины</h3>
+        <p class="service__desc">Рихтовка, удаление вмятин, восстановление геометрии и замена повреждённых деталей.</p>
+        <p class="service__price"><span>Вмятина + покраска + полировка</span><b>15 000 ₽</b></p>
+        <button class="service__more" type="button" data-service="body">Подробнее <svg><use href="#i-arrow"/></svg></button>
+      </article>
+
+      <article class="service reveal" style="--d:0ms">
+        <div class="service__icon" aria-hidden="true">
+          <svg viewBox="0 0 32 32" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M4 22v-4.5c0-1.6 1-2.8 2.5-3.2L9 9.5A2 2 0 0 1 10.8 8h10.4A2 2 0 0 1 23 9.5l2.5 4.8c1.5.4 2.5 1.6 2.5 3.2V22z"/><path d="M6 22v3h4v-3M22 22v3h4v-3"/><circle cx="8.5" cy="17.5" r="1.3"/><circle cx="23.5" cy="17.5" r="1.3"/><path class="ac" d="M4 20h24"/></svg>
+        </div>
+        <h3 class="service__title">Бамперы</h3>
+        <p class="service__desc">Пайка трещин и креплений, замена и покраска переднего или заднего бампера.</p>
+        <p class="service__price"><span>Замена переднего бампера</span><b>17 000 ₽</b></p>
+        <button class="service__more" type="button" data-service="bumper">Подробнее <svg><use href="#i-arrow"/></svg></button>
+      </article>
+
+      <article class="service reveal" style="--d:70ms">
+        <div class="service__icon" aria-hidden="true">
+          <svg viewBox="0 0 32 32" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="15" cy="19" r="8.5"/><path d="M15 10.5V5h9"/><path class="ac" d="M11 19a4 4 0 0 1 4-4M19 19a4 4 0 0 1-4 4"/></svg>
+        </div>
+        <h3 class="service__title">Полировка кузова</h3>
+        <p class="service__desc">Абразивная и восстановительная полировка: убираем голограммы, риски и мутность лака.</p>
+        <p class="service__price"><span>Стоимость</span><b>после осмотра</b></p>
+        <button class="service__more" type="button" data-service="polish">Подробнее <svg><use href="#i-arrow"/></svg></button>
+      </article>
+
+      <article class="service reveal" style="--d:140ms">
+        <div class="service__icon" aria-hidden="true">
+          <svg viewBox="0 0 32 32" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M4 26 9.5 7.5a2 2 0 0 1 1.9-1.5h9.2a2 2 0 0 1 1.9 1.5L28 26z"/><path class="ac" d="M10 21l7-11M14 24l7-11M19 24l3.6-5.6"/></svg>
+        </div>
+        <h3 class="service__title">Тонировка</h3>
+        <p class="service__desc">Тонировка стёкол плёнкой с учётом допустимой светопропускаемости для передних стёкол.</p>
+        <p class="service__price"><span>Стоимость</span><b>по запросу</b></p>
+        <button class="service__more" type="button" data-service="tint">Подробнее <svg><use href="#i-arrow"/></svg></button>
+      </article>
+    </div>
+  </div>
+</section>
+
+<!-- ============ ПРЕИМУЩЕСТВА ============ -->
+<section class="section section--night" id="advantages" data-section="advantages">
+  <div class="container">
+    <div class="section-head">
+      <div class="section-head__main reveal">
+        <span class="eyebrow">Преимущества</span>
+        <h2 class="h2">Почему автомобили доверяют <em>YMV</em></h2>
+      </div>
+      <div class="section-head__aside reveal" style="--d:120ms">
+        <p>Четыре правила, по которым мы работаем с каждым автомобилем — от локального скола до полной покраски.</p>
+      </div>
+    </div>
+
+    <div class="adv reveal" id="adv">
+      <div class="adv__item" data-ai="0">
+        <div class="adv__fig">1:1</div>
+        <h3 class="adv__title">Качество</h3>
+        <p class="adv__desc">Подбираем оттенок по коду краски и тест-напылу. Новый слой не отличить от соседних элементов.</p>
+      </div>
+      <div class="adv__item" data-ai="1">
+        <div class="adv__fig">2<sub>замера</sub></div>
+        <h3 class="adv__title">Надёжность</h3>
+        <p class="adv__desc">Толщиномер до и после работ: вы видите толщину ЛКП в микронах, а не верите на слово.</p>
+      </div>
+      <div class="adv__item" data-ai="2">
+        <div class="adv__fig">0<sub>₽</sub></div>
+        <h3 class="adv__title">Профессиональный подход</h3>
+        <p class="adv__desc">Осмотр и расчёт стоимости бесплатно. Цену и сроки называем до начала работ.</p>
+      </div>
+      <div class="adv__item" data-ai="3">
+        <div class="adv__fig">360°</div>
+        <h3 class="adv__title">Индивидуальные решения</h3>
+        <p class="adv__desc">Кузов, покраска, полировка и тонировка в одном месте — вплоть до проектов под ключ.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ ГАЛЕРЕЯ ============ -->
+<section class="section" id="works" data-section="works">
+  <div class="container">
+    <div class="section-head">
+      <div class="section-head__main reveal">
+        <span class="eyebrow">Галерея</span>
+        <h2 class="h2">Работы и процесс</h2>
+      </div>
+      <div class="section-head__aside reveal" style="--d:120ms">
+        <p>Подготовка, покраска в камере и финишная полировка. Нажмите на фото, чтобы открыть его на весь экран.</p>
+      </div>
+    </div>
+
+    <div class="gallery" id="gallery">
+      <button class="work w1 reveal reveal--clip" type="button" data-index="0" style="--d:0ms">
+        <img src="img/work-custom.webp" alt="Индивидуальная покраска кузова с графикой под фиолетовым светом" width="1000" height="1333" loading="lazy" style="object-position:50% 40%">
+        <span class="work__cap"><span>Проект</span><strong>Индивидуальная покраска</strong></span>
+        <span class="work__zoom" aria-hidden="true"><svg><use href="#i-zoom"/></svg></span>
+      </button>
+      <button class="work w2 reveal reveal--clip" type="button" data-index="1" style="--d:80ms">
+        <img src="img/work-booth.webp" alt="Автомобиль, укрытый плёнкой, в окрасочной камере" width="1200" height="800" loading="lazy">
+        <span class="work__cap"><span>Камера</span><strong>Подготовка к покраске</strong></span>
+        <span class="work__zoom" aria-hidden="true"><svg><use href="#i-zoom"/></svg></span>
+      </button>
+      <button class="work w3 reveal reveal--clip" type="button" data-index="2" style="--d:160ms">
+        <img src="img/work-spray.webp" alt="Нанесение краски на крыло краскопультом" width="1200" height="1200" loading="lazy" style="object-position:40% 50%">
+        <span class="work__cap"><span>Покраска</span><strong>Нанесение базы</strong></span>
+        <span class="work__zoom" aria-hidden="true"><svg><use href="#i-zoom"/></svg></span>
+      </button>
+      <button class="work w4 reveal reveal--clip" type="button" data-index="3" style="--d:0ms">
+        <img src="img/work-violet.webp" alt="Задняя часть спорткара в фиолетовом металлике" width="1200" height="800" loading="lazy">
+        <span class="work__cap"><span>Результат</span><strong>Глубокий глянец</strong></span>
+        <span class="work__zoom" aria-hidden="true"><svg><use href="#i-zoom"/></svg></span>
+      </button>
+      <button class="work w5 reveal reveal--clip" type="button" data-index="4" style="--d:80ms">
+        <img src="img/work-polish.webp" alt="Полировка кузова роторной машинкой" width="1000" height="1333" loading="lazy" style="object-position:50% 38%">
+        <span class="work__cap"><span>Полировка</span><strong>Восстановление глянца</strong></span>
+        <span class="work__zoom" aria-hidden="true"><svg><use href="#i-zoom"/></svg></span>
+      </button>
+      <button class="work w6 reveal reveal--clip" type="button" data-index="5" style="--d:0ms">
+        <img src="img/work-masking.webp" alt="Мастер обклеивает кузов малярным скотчем перед покраской" width="900" height="1350" loading="lazy" style="object-position:60% 50%">
+        <span class="work__cap"><span>Подготовка</span><strong>Маскировка элементов</strong></span>
+        <span class="work__zoom" aria-hidden="true"><svg><use href="#i-zoom"/></svg></span>
+      </button>
+      <button class="work w7 reveal reveal--clip" type="button" data-index="6" style="--d:80ms">
+        <img src="img/work-bumper.webp" alt="Шлифовка заднего бампера перед покраской" width="1070" height="800" loading="lazy">
+        <span class="work__cap"><span>Кузов</span><strong>Ремонт бампера</strong></span>
+        <span class="work__zoom" aria-hidden="true"><svg><use href="#i-zoom"/></svg></span>
+      </button>
+      <button class="work w8 reveal reveal--clip" type="button" data-index="7" style="--d:160ms">
+        <img src="img/work-prep.webp" alt="Матирование лакокрасочного покрытия перед покраской" width="1200" height="800" loading="lazy">
+        <span class="work__cap"><span>Подготовка</span><strong>Матирование ЛКП</strong></span>
+        <span class="work__zoom" aria-hidden="true"><svg><use href="#i-zoom"/></svg></span>
+      </button>
+    </div>
+
+    <div class="gallery__foot reveal">
+      <span>Свежие работы и видео процесса — в нашем Instagram.</span>
+      <a class="link-arrow" href="https://www.instagram.com/ymv_39/" target="_blank" rel="noopener" data-bind-href="instagram">@ymv_39 <svg><use href="#i-arrow-ur"/></svg></a>
+    </div>
+  </div>
+</section>
+
+<!-- ============ МЫ НА КАРТЕ ============ -->
+<section class="section section--alt" id="map" data-section="contacts">
+  <div class="container">
+    <div class="section-head">
+      <div class="section-head__main reveal">
+        <span class="eyebrow">Как добраться</span>
+        <h2 class="h2">Мы на карте</h2>
+      </div>
+      <div class="section-head__aside reveal" style="--d:120ms">
+        <p>Нажмите на метку YMV или на кнопку «Построить маршрут» — откроются Яндекс Карты с маршрутом до нас.</p>
+      </div>
+    </div>
+
+    <div class="locate">
+      <div class="locate__info reveal">
+        <div class="locate__addr">
+          <strong data-bind="address">Калининград, Центральный район</strong>
+          <span data-bind="addressNote">Въезд и парковка у мастерской</span>
+        </div>
+        <div>
+          <p class="locate__label">Режим работы</p>
+          <dl class="kv" id="hours">
+            <div class="kv__row" data-days="1,2,3,4,5"><dt>Пн – Пт</dt><dd>10:00 – 20:00</dd></div>
+            <div class="kv__row" data-days="6"><dt>Суббота</dt><dd>10:00 – 18:00</dd></div>
+            <div class="kv__row" data-days="0"><dt>Воскресенье</dt><dd>по записи</dd></div>
+          </dl>
+        </div>
+        <div>
+          <p class="locate__label">Телефон</p>
+          <div class="phone-row">
+            <a href="tel:+79000000000" data-bind="phone" data-bind-href="tel">+7 (900) 000-00-00</a>
+            <button class="copy-btn" type="button" data-copy="phone">Скопировать</button>
+          </div>
+        </div>
+        <div class="locate__actions">
+          <a class="btn btn--primary btn--block" href="https://yandex.ru/maps/?rtext=~54.7246,20.4826&amp;rtt=auto" target="_blank" rel="noopener" data-yandex="route">
+            <svg><use href="#i-route"/></svg>Построить маршрут
+          </a>
+          <a class="btn btn--outline btn--block" href="https://yandex.ru/maps/?ll=20.4826,54.7246&amp;z=17&amp;pt=20.4826,54.7246,pm2vvl" target="_blank" rel="noopener" data-yandex="org">
+            Открыть в Яндекс Картах <svg><use href="#i-arrow-ur"/></svg>
+          </a>
+        </div>
+      </div>
+
+      <div class="map reveal" id="mapBox" style="--d:120ms" aria-label="Карта с расположением YMV Painting Lab">
+        <span class="map__badge">YMV · Калининград</span>
+        <div class="map__canvas" id="mapCanvas"></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ КОНТАКТЫ ============ -->
+<section class="contacts" id="contacts" data-section="contacts">
+  <div class="contacts__bg" aria-hidden="true"><img src="img/cta-lines.webp" alt="" width="1800" height="1013" loading="lazy" data-parallax="0.1"></div>
+  <div class="container">
+    <div class="cta">
+      <span class="eyebrow reveal">Контакты</span>
+      <h2 class="cta__title reveal" style="--d:80ms">Запишитесь на <em>бесплатный</em> осмотр</h2>
+      <p class="cta__lead reveal" style="--d:160ms">Посмотрим автомобиль, замерим лакокрасочное покрытие и назовём точную стоимость. Без обязательств.</p>
+      <div class="cta__actions reveal" style="--d:240ms">
+        <button class="btn btn--primary btn--lg" type="button" data-open="contact">Связаться с нами <svg class="btn__arrow"><use href="#i-arrow"/></svg></button>
+        <a class="btn btn--glass btn--lg" href="tel:+79000000000" data-bind-href="tel"><svg><use href="#i-phone"/></svg><span data-bind="phone">+7 (900) 000-00-00</span></a>
+      </div>
+    </div>
+
+    <div class="cinfo">
+      <div class="cinfo__item reveal">
+        <span class="cinfo__label">Телефон</span>
+        <span class="cinfo__value"><a href="tel:+79000000000" data-bind="phone" data-bind-href="tel">+7 (900) 000-00-00</a></span>
+      </div>
+      <div class="cinfo__item reveal" style="--d:70ms">
+        <span class="cinfo__label">Адрес</span>
+        <span class="cinfo__value"><a href="#map" data-bind="address">Калининград, Центральный район</a></span>
+      </div>
+      <div class="cinfo__item reveal" style="--d:140ms">
+        <span class="cinfo__label">Режим работы</span>
+        <span class="cinfo__value" data-bind="hoursShort">Пн–Пт 10–20, Сб 10–18<br>Вс — по записи</span>
+      </div>
+      <div class="cinfo__item reveal" style="--d:210ms">
+        <span class="cinfo__label">Соцсети</span>
+        <div class="socials">
+          <a class="social" href="https://t.me/YMVpainting" target="_blank" rel="noopener" data-bind-href="telegram"><svg><use href="#i-tg"/></svg>Telegram</a>
+          <a class="social" href="https://www.instagram.com/ymv_39/" target="_blank" rel="noopener" data-bind-href="instagram"><svg><use href="#i-ig"/></svg>Instagram</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+</main>
+
+<!-- ============ ПОДВАЛ ============ -->
+<footer class="footer">
+  <div class="container">
+    <div class="footer__grid">
+      <div class="footer__brand">
+        <a href="#home" class="logo" aria-label="YMV Painting Lab">
+          <span class="logo__mark">YMV</span>
+          <span class="logo__sub">Painting<br>Lab</span>
+        </a>
+        <p class="footer__about">Автопокраска и кузовной ремонт в Калининграде. Полная и локальная покраска, бамперы, полировка, тонировка.</p>
+      </div>
+      <div>
+        <p class="footer__title">Разделы</p>
+        <ul class="footer__list">
+          <li><a href="#about">О компании</a></li>
+          <li><a href="#services">Услуги</a></li>
+          <li><a href="#advantages">Преимущества</a></li>
+          <li><a href="#works">Работы</a></li>
+        </ul>
+      </div>
+      <div>
+        <p class="footer__title">Контакты</p>
+        <ul class="footer__list">
+          <li><a href="tel:+79000000000" data-bind="phone" data-bind-href="tel">+7 (900) 000-00-00</a></li>
+          <li><a href="#map" data-bind="address">Калининград, Центральный район</a></li>
+          <li data-bind="hoursFooter">Пн–Пт 10:00–20:00</li>
+        </ul>
+      </div>
+      <div>
+        <p class="footer__title">Соцсети</p>
+        <ul class="footer__list">
+          <li><a href="https://t.me/YMVpainting" target="_blank" rel="noopener" data-bind-href="telegram">Telegram · @YMVpainting</a></li>
+          <li><a href="https://www.instagram.com/ymv_39/" target="_blank" rel="noopener" data-bind-href="instagram">Instagram · @ymv_39</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer__bottom">
+      <span>© <span id="year">2026</span> YMV Painting Lab. Покраска авто в Калининграде.</span>
+      <a class="footer__up" href="#home">Наверх <svg width="16" height="16"><use href="#i-up"/></svg></a>
+    </div>
+  </div>
+</footer>
+
+<!-- Мобильная панель действий -->
+<div class="mbar" id="mbar" aria-label="Быстрые действия">
+  <a class="btn btn--glass" href="tel:+79000000000" data-bind-href="tel"><svg><use href="#i-phone"/></svg>Позвонить</a>
+  <a class="btn btn--primary" href="https://yandex.ru/maps/?rtext=~54.7246,20.4826&amp;rtt=auto" target="_blank" rel="noopener" data-yandex="route"><svg><use href="#i-route"/></svg>Маршрут</a>
+</div>
+
+<!-- Окно: услуга -->
+<div class="modal" id="serviceModal" role="dialog" aria-modal="true" aria-labelledby="smTitle" aria-hidden="true">
+  <div class="modal__panel">
+    <button class="icon-btn icon-btn--light modal__close" type="button" data-close aria-label="Закрыть"><svg><use href="#i-close"/></svg></button>
+    <span class="eyebrow modal__eyebrow">Услуга</span>
+    <h3 class="modal__title" id="smTitle"></h3>
+    <p class="modal__text" id="smText"></p>
+    <ol class="modal__list" id="smList"></ol>
+    <p class="modal__price" id="smPrice"></p>
+    <div class="modal__actions">
+      <button class="btn btn--primary" type="button" data-open="contact">Записаться на осмотр</button>
+      <a class="btn btn--outline" href="https://t.me/YMVpainting" target="_blank" rel="noopener" data-bind-href="telegram"><svg><use href="#i-tg"/></svg>Написать в Telegram</a>
+    </div>
+  </div>
+</div>
+
+<!-- Окно: связаться -->
+<div class="modal" id="contactModal" role="dialog" aria-modal="true" aria-labelledby="cmTitle" aria-hidden="true">
+  <div class="modal__panel">
+    <button class="icon-btn icon-btn--light modal__close" type="button" data-close aria-label="Закрыть"><svg><use href="#i-close"/></svg></button>
+    <span class="eyebrow modal__eyebrow">Связаться с YMV</span>
+    <h3 class="modal__title" id="cmTitle">Как вам удобнее?</h3>
+    <p class="modal__text">Опишите задачу и пришлите пару фото — ответим, когда сможем принять автомобиль на осмотр.</p>
+    <div class="channels">
+      <a class="channel" href="https://t.me/YMVpainting" target="_blank" rel="noopener" data-bind-href="telegram">
+        <span class="channel__icon"><svg><use href="#i-tg"/></svg></span>
+        <span><span class="channel__name">Telegram</span><br><span class="channel__meta">@YMVpainting</span></span>
+        <span class="channel__go"><svg><use href="#i-arrow-ur"/></svg></span>
+      </a>
+      <a class="channel" href="https://www.instagram.com/ymv_39/" target="_blank" rel="noopener" data-bind-href="instagram">
+        <span class="channel__icon"><svg><use href="#i-ig"/></svg></span>
+        <span><span class="channel__name">Instagram</span><br><span class="channel__meta">@ymv_39 · Direct</span></span>
+        <span class="channel__go"><svg><use href="#i-arrow-ur"/></svg></span>
+      </a>
+      <div class="channel">
+        <span class="channel__icon"><svg><use href="#i-phone"/></svg></span>
+        <span><span class="channel__name">Телефон</span><br><a class="channel__meta channel__meta--nowrap" href="tel:+79000000000" data-bind="phone" data-bind-href="tel">+7 (900) 000-00-00</a></span>
+        <button class="copy-btn copy-btn--icon" type="button" data-copy="phone" data-icon aria-label="Скопировать номер"><svg><use href="#i-copy"/></svg></button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Лайтбокс -->
+<div class="lightbox" id="lightbox" role="dialog" aria-modal="true" aria-label="Просмотр фотографии" aria-hidden="true">
+  <div class="lightbox__bar">
+    <span class="lightbox__count"><b id="lbIndex">01</b> / <span id="lbTotal">08</span></span>
+    <button class="icon-btn" type="button" data-close aria-label="Закрыть"><svg><use href="#i-close"/></svg></button>
+  </div>
+  <div class="lightbox__stage" id="lbStage"><img class="lightbox__img" id="lbImg" src="" alt=""></div>
+  <div class="lightbox__foot">
+    <div class="lightbox__cap"><span id="lbTag"></span><strong id="lbCap"></strong></div>
+    <div class="lightbox__nav">
+      <button class="icon-btn" type="button" id="lbPrev" aria-label="Предыдущее фото"><svg><use href="#i-prev"/></svg></button>
+      <button class="icon-btn" type="button" id="lbNext" aria-label="Следующее фото"><svg><use href="#i-next"/></svg></button>
+    </div>
+  </div>
+</div>
+<!--/BODY-->
+<script src="js/main.js"></script>
 </body>
 </html>
